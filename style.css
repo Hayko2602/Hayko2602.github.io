@@ -1,0 +1,171 @@
+body{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+#wrapper{
+    width: 60%;
+    height: 150vh;
+    margin: 0 auto;
+    background-color: #e5d6d2;
+    box-shadow: -20px 10px 120px gray;
+    display: flex;
+}
+
+/*<<<<<<<<<<<<<<<<      Left >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+
+/*=================== HEAD ==================*/
+#left-side{
+    /* border: 1px solid black; */
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+#pic{
+    margin-top: 25px;
+    width: 100%;
+    flex: 1.5;
+    display: flex;
+    /* border: 1px solid black; */
+}
+#picture{
+    flex: 1;
+    border-radius: 90%;
+    /* border: 1px solid black; */
+    background-image: url("IMG_8287.JPG");
+    background-size: cover;
+    margin: 0 auto;
+
+    box-shadow: -4px 4px 10px gray;
+    max-width: 150px;
+}
+
+#bar-list{
+    width: 100%;
+    flex: 8.5;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+}
+
+.bar-items{
+    width: 95%;
+    padding-left: 10px;
+    flex: 3;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+}
+/*============== Contacts ===============*/
+.bar-items-title{
+    margin: 20px 10px;
+    /* border: 1px solid black; */
+    font-size: 1.5vw;
+    font-family: fantasy;
+    color: rgb(89, 84, 84);
+}
+
+.contacts-info{
+    flex: 3;
+    /* border: 1px solid black; */
+}
+
+.contact-text{
+    font-size: 1vw;
+    text-align: center;
+    transition-property: scale;
+    transition-duration: 1.5s;
+}
+
+.contact-text:hover{
+    scale: 1.2;
+    color: color-mix(in hsl longer hue, color percentage, color percentage);
+    
+}
+#education{
+    flex: 2;
+}
+
+/*============  Language ==============*/
+ul{
+    padding-left: 0;
+   /*  border: 1px solid black; */
+}
+#lang-level{
+    display: block;
+    margin-left: 4px;
+    float: left;
+    width: 10px;
+    height: 10px;
+    border-radius: 90%;
+    border: 1px solid black;
+}
+
+.color-lev{
+    background-color: #3f313f;
+}
+/*<<<<<<<<<<<<<<<<<  RIGHT  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+#right-side{
+    /* border: 1px solid black; */
+    flex: 7;
+    display: flex;
+    flex-direction: column;
+}
+
+#wrap-title{
+    width: 100%;
+    flex: 1.5;
+    /* display: flex; */
+    background-color: #3f313f;
+    /* border: 1px solid black; */
+}
+
+#nameSur{
+    height: 50px;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bolder;
+    margin: 10% auto;
+    color: #e5d6d2;
+    /* border: 1px solid black; */
+}
+
+#wrap-list{
+    width: 100%;
+    flex: 8.5;
+    display: flex;
+    flex-direction: column;
+    background-color: #e7e1e1;
+    /* border: 1px solid black; */
+}
+
+.wrap-items{
+    width: 100%;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid black; */
+}
+.wrap-items-title{
+    /* border-bottom: 2px solid black; */
+    width: 50%;
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #a29c97;
+    box-shadow: 0px 4px 5px  #c8bfba;
+}
+#abouteMe{
+
+}
+
+.mainSpec
