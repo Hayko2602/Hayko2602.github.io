@@ -159,4 +159,11 @@ body{
         margin-left: 2px;
         font-size: 0.2vw;
     }
+    .sect-h3{
+        font-size: 4vw;
+    }
+    .sect2{
+       display: grid;
+       grid-template-rows: 5% auto 20%;
+    }
   }
