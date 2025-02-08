@@ -4,16 +4,18 @@ body{
 	box-sizing: border-box;
 }
 
-.ex{
+/* .ex{
     border: 1px black solid;
 }
-
+ */
 .wrapper{
     width: calc(50%);
     height: 150vh;
     margin: auto;
     display: grid;
     grid-template-columns: 35% auto;
+    border: 1px black solid;
+    box-shadow: 2px 5px 8px black;
 }
 /*============================= SECTION 1       */
 .sect1{
@@ -22,6 +24,7 @@ body{
     grid-template-rows: 20% 20% auto auto;
     color: white;
     padding-left: 10px;
+    box-shadow: 2px 5px 5px black;
 }
 
 .pic{
@@ -32,7 +35,7 @@ body{
     width: 150px;
     height: 150px;
     margin: 2% auto;
-    background-image: url(./IMG_8287.JPG);
+    background-image: url(./01.JPG);
     background-size: cover;
     border-radius: 50%;
 }
@@ -62,7 +65,7 @@ body{
     grid-template-rows: 10% auto 25%;
 }
 .sect2-items{
-    margin-left: 5px;
+    margin-left: 10px;
 }
 .name-pers{
     font-size: calc(3vw);
