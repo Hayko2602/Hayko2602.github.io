@@ -78,6 +78,7 @@ body{
 
 .category-name{
     font-family: 'Brush Script MT', cursive;
+    font-weight: bold;
 }
 .wexp{
     display: grid;
