@@ -1,0 +1,212 @@
+body{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*.ex{
+    border: 1px black solid;
+}*/
+
+.wrapper{
+    width: calc(50%);
+    height: 150vh;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 35% auto;
+    border: 1px black solid;
+    box-shadow: 2px 5px 8px black;
+}
+/*============================= SECTION 1       */
+.sect1{
+    background-color: #00172b;
+    display: grid;
+    grid-template-rows: 20% 20% auto auto;
+    color: white;
+    padding-left: 10px;
+    box-shadow: 2px 5px 5px black;
+}
+
+.pic{
+    display: grid;
+}
+
+.pers-pict{
+    width: 150px;
+    height: 150px;
+    margin: 2% auto;
+    background-image: url(./01.JPG);
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.pers-info{
+    display: grid;
+    grid-template-rows:auto;
+    gap: 5px;
+}
+
+.skills{
+    display: grid;
+}
+.title1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.per-inf-text{
+    font-size: 1.2vw;
+}
+.mail{
+    font-size: 1vw;
+}
+
+
+
+/*============================= SECTION 2       */
+
+.sect2{
+    display: grid;
+    padding-left: 10px;
+    grid-template-rows: 10% auto auto auto 25%;
+    background: url(./bg2.png);
+    background-position: 2%;
+}
+
+.name-pers{
+    font-size: calc(3vw);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.category-name{
+    font-family: 'Brush Script MT', cursive;
+}
+.wexp{
+    display: grid;
+}
+.educ{
+    display: grid;
+}
+.vol{
+    display: grid;
+    grid-template-rows: 20%  20% auto;
+}
+.vol-text{
+    margin-bottom: 20px;
+    font-size: 1vw;
+}
+
+/*============== ANIMATION PART+++++++++===================*/
+
+
+
+/*========================  MEDIA Part  ==================================*/
+
+@media only screen and (max-width: 1500px) {
+    .wrapper{
+        width: 70%;
+        height: 120vh;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 35% auto;
+    }
+    
+  }
+
+@media only screen and (max-width: 1200px) {
+    .wrapper{
+        width: 65%;
+        height: 100vh;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 35% auto;
+    }
+    .pers-pict{
+        width: 120px;
+        height: 120px;
+    }
+    
+    .vol-text{
+        margin-bottom: 20px;
+        font-size: 1.1vw;
+    }
+
+  }
+
+@media only screen and (max-width: 1000px) {
+    .wrapper{
+        width: 80%;
+        height: 100vh;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 35% auto;
+    }
+    .vol-text{
+        margin-bottom: 20px;
+        font-size: 1.8vw;
+    }
+    .per-inf-text{
+        font-size: 1.8vw;
+    }
+    .mail{
+        font-size: 1.6vw;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    .wrapper{
+        width: 90%;
+        height: 100vh;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 35% auto;
+    }
+    .pers-pict{
+        width: 120px;
+        height: 120px;
+    }
+    .per-inf-text{
+        font-size: 1.8vw;
+    }
+    .mail{
+        font-size: 2vw;
+    }
+    
+  }
+
+  @media only screen and (max-width: 500px) {
+    .wrapper{
+        width: 95%;
+        height: 100vh;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 35% auto;
+    }
+    .name-pers{
+        font-size: calc(5vw);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .pers-pict{
+        width: 100px;
+        height: 100px;
+    }
+    .per-inf-text{
+        font-size: 2.5vw;
+    }
+    .sect-title{
+        font-size: 2vw;
+    }
+    .sect2{
+       display: grid;
+       grid-template-rows: 5% auto 20%;
+    }
+    .spec-title{
+        font-size: 3.2vw;
+    }
+    .vol-text{
+        margin-bottom: 20px;
+        font-size: 2.5vw;
+    }
+    .mail{
+        word-wrap: break-word;
+        font-size: 1.8vw;
+    }
+  }
