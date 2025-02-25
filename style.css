@@ -234,7 +234,9 @@ body{
     .wrapper{
         height: 120vh;
     }
-
+    .educ{
+        padding-top: 40px;
+    }
     .vol-text{
         display: none;
     }
