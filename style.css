@@ -248,6 +248,8 @@ body{
     .educ{
 	    margin-top: 20px;
 	    padding: 5px 0px 0px;
-	    
+    }
+    .wrapper{
+	    height:130vh;
     }
 }
