@@ -232,7 +232,7 @@ body{
         grid-template-rows: 50px 280px 15vh ;
     }
     .wrapper{
-        height: 130vh;
+        height: 140vh;
     }
     
     .vol-text{
@@ -242,9 +242,6 @@ body{
     .vol-text1{
         display: block;
         font-size: 2.5vw;
-    }
-    ․educ{
-	margin-top 20px;
     }
   }
 
