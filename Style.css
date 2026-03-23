@@ -209,6 +209,10 @@ header .navbar {
   flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
+  overflow: hidden;        /* prevent flex stretch effect */
+  will-change: transform;  /* hint Safari to isolate layer */
+  -webkit-transform: translateZ(0);
 }
 
 .sec2-img {
@@ -232,6 +236,14 @@ header .navbar {
     width: 60%;
   }
 }
+
+@media (max-width: 480px) {
+  .sec2-img {
+    width: 250px;          /* or any comfortable fixed number */
+    height: auto;
+  }
+}
+
 
 /*================ SECTION 3 =================*/
 .sec3 {
