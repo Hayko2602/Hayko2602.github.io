@@ -1,0 +1,596 @@
+/*================ GLOBAL =================*/
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --vh: 100%;
+}
+/* Safari-friendly adjustment */
+@supports (-webkit-touch-callout: none) {
+  :root {
+    --vh: calc(100vh - 65px);
+  }
+}
+
+/*================ HEADER =================*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  background: #333;
+  display: flex;
+  justify-content: center;       /* center logo */
+  align-items: center;
+  padding: 15px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: gold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+header .navbar {
+  position: absolute;
+  left: 20px;                    /* move menu left side */
+  display: flex;
+  align-items: center;
+}
+
+/*================ DESKTOP MENU =================*/
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+}
+
+.nav-links li a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+/* underline animation */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0%;
+  background: gold;
+  transition: width 0.4s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-links li a.active::after {
+  width: 100%;
+}
+
+/*================ HAMBURGER =================*/
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+  color: white;
+}
+
+/*================ MOBILE MENU =================*/
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 9999;
+
+    opacity: 0;
+    transform: translateY(-30px);
+    pointer-events: none;                /* can't click while hidden */
+    transition:
+      opacity 0.6s ease-in-out,
+      transform 0.6s ease-in-out;        /* smoother motion */
+  }
+
+  .nav-links.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;               /* enable click when open */
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .nav-links li a {
+    display: block;
+    width: 100%;
+  }
+}
+
+
+/*================ SECTIONS WRAPPER =================*/
+.sections {
+  margin: 0;
+  padding: 0;
+}
+
+/*================ DEFAULT SECTION =================*/
+.sec {
+  min-height: var(--vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+}
+
+/*================ SECTION 1 =================*/
+.sec1 {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh; /* ensure visible height */
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.sec1 .content {
+  position: relative;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+/*================ SECTION 2 =================*/
+.sec2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #555, #000);
+  padding: 40px;
+  gap: 40px;
+}
+
+.sec2-left {
+  flex: 1;
+  color: white;
+}
+
+.sec2-title {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.sec2-desc {
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.sec2-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.sec2-img {
+  width: 80%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .sec2 {
+    flex-direction: column;
+    text-align: center;
+  }
+  .sec2-img {
+    width: 60%;
+  }
+}
+
+/*================ SECTION 3 =================*/
+.sec3 {
+  display: block;
+  padding: 100px 40px 60px 40px;
+  text-align: center;
+
+  background-image: url("library.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.sec3-title {
+  width: 100%;
+  display: block;
+  margin-bottom: 40px;
+  font-size: 48px;
+  color: white;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: all 1.2s ease;
+}
+
+.sec3-content {
+  display: flex;
+  gap: 40px;
+  color: white;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: all 1.2s ease;
+}
+
+@media (max-width: 768px) {
+  .sec3-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .sec3 {
+    background-attachment: scroll; /* new added  meybe wrong */
+  }
+}
+
+.sec3-title.active,
+.sec3-content.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Extra small screens – below 430px width */
+@media (max-width: 442px) {
+  .sec3 {
+    padding: 60px 20px 40px 20px; /* keeps inner spacing balanced */
+    height: 80vh;                 /* 20% smaller total height */
+  }
+
+  .sec3-title {
+    font-size: 32px;               /* smaller heading */
+    margin-bottom: 25px;
+  }
+
+  .sec3-content {
+    font-size: 25px;               /* shrink text slightly */
+    gap: 20px;
+  }
+
+  .sec3-left p,
+  .sec3-right p {
+    font-size: 25px;               /* ensure paragraph text fits */
+    line-height: 1.6;
+  }
+}
+
+
+
+/*================ SECTION 4 =================*/
+.sec4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 100px 40px 60px 40px;
+  background: linear-gradient(to bottom, #555, #000);
+  color: white;
+}
+
+.sec4-left {
+  flex: 1;
+  max-width: 600px;
+}
+
+.sec4-title {
+  font-size: 56px;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+.sec4-text {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.sec4-ref {
+  font-size: 18px;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.sec4-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.sec4-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* button */
+.sec4-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  border: 2px solid gold;
+  border-radius: 6px;
+  transition: all 0.6s ease;
+  cursor: pointer;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.sec4-btn:hover {
+  color: black;
+  background: gold;
+  box-shadow: 0 0 15px gold, 0 0 30px gold;
+  transform: scale(1.05);
+}
+
+.sec4-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+  transition: 0.8s;
+}
+
+.sec4-btn:hover::before {
+  left: 100%;
+}
+
+@media (max-width: 768px) {
+  .sec4 {
+    flex-direction: column;
+    text-align: center;
+  }
+  .sec4-img {
+    max-width: 80%;
+  }
+}
+
+/*================ SECTION 5 =================*/
+.sec5 {
+  display: block;
+  background: black;
+  padding: 100px 40px;
+  text-align: center;
+  color: white;
+}
+
+.sec5-title {
+  font-size: 56px;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.sec5-form {
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sec5-form input,
+.sec5-form textarea {
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 18px;
+  outline: none;
+}
+
+.sec5-form textarea {
+  height: 150px;
+  resize: none;
+}
+
+.sec5-btn {
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  border: 2px solid gold;
+  background: transparent;
+  color: gold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.6s ease;
+}
+
+.sec5-btn:hover {
+  background: gold;
+  color: black;
+  box-shadow: 0 0 15px gold, 0 0 30px gold;
+  transform: scale(1.05);
+}
+
+
+
+/*for buttons 4 & 5 sections*/
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; /* optional if you don’t want text selection */
+}
+
+
+/*================ SECTION 6 =================*/
+.sec6 {
+  background: linear-gradient(to bottom, #555, #000);
+  padding: 100px 40px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.sec6-box {
+  flex: 1;
+  max-width: 400px;
+}
+
+.sec6-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.sec6-text {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .sec6 {
+    flex-direction: column;
+    text-align: center;
+  }
+  .sec6-box {
+    max-width: 100%;
+  }
+}
+
+/*================ PROGRAM PAGE =================*/
+.program-container {
+  margin-top: 60px;
+}
+
+.program-block {
+  background: linear-gradient(to bottom, #111, #333);
+  height: 100vh;
+  padding: 100px 40px;
+  color: white;
+}
+
+.program-title {
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.program-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.program-left,
+.program-right {
+  flex: 1;
+}
+
+.program-text {
+  font-size: 22px;
+  line-height: 1.6;
+}
+
+.program-img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.program-btn {
+  margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px 30px;
+  font-size: 20px;
+  border: 2px solid gold;
+  background: transparent;
+  color: gold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.6s ease;
+}
+
+.program-btn:hover {
+  background: gold;
+  color: black;
+  box-shadow: 0 0 15px gold, 0 0 30px gold;
+  transform: scale(1.07);
+}
+
+@media (max-width: 768px) {
+  .program-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .program-img {
+    max-width: 70%;
+  }
+}
+
+
+/*================ FOOTER =================*/
+footer {
+  background: #333;
+  color: #fff;
+  padding: 25px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-top: 2px solid gold;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.4);
+}
