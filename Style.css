@@ -215,6 +215,12 @@ header .navbar {
   width: 80%;
   max-width: 400px;
   border-radius: 10px;
+  display: block;                 /* prevents inline spacing quirks */
+  object-fit: cover;              /* keeps correct proportions */
+  transform: translateZ(0);       /* stop iOS flex scroll distortion */
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
 }
 
 @media (max-width: 768px) {
