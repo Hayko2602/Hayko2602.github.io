@@ -451,8 +451,8 @@ header .navbar {
   color: white;
 }
 
-.experiance {
-  background-image: url("diagrama2.jpg");
+.experiance{
+   background-image: url("diagrama2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -465,20 +465,12 @@ header .navbar {
   font-weight: bold;
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .experiance {
-    background-attachment: scroll;
-    background-position: center;
+    min-height: 100vh;
     background-size: cover;
-  }
-
-  .sec5 {
-    padding: 70px 20px;
-  }
-
-  .sec5-title {
-    font-size: 38px;
+    background-position: center;
+    background-attachment: scroll;
   }
 }
 
